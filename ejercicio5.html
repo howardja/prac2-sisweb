@@ -1,0 +1,59 @@
+<html>
+	<head>
+
+		<style>
+		#cancha{
+			border: 5px solid black;
+		}
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+		<script>
+		$(document).ready(function(){
+
+			var x = 450;
+			var y = 300;
+			var ver=1;
+			var hor=1;
+			var contexto;
+
+			function init(){
+			  canvas = $('#cancha')
+			  contexto = canvas[0].getContext("2d");
+			  return setInterval(draw, 20);
+			}
+			
+			function circle(xpos, ypos){
+			  contexto.beginPath();
+			  contexto.arc(xpos, ypos, 15, 0, Math.PI*2, true); 
+			  contexto.closePath();
+			  contexto.fill();		
+			}
+
+			function clear(){
+				contexto.clearRect(0, 0, 900, 600);
+			}
+
+			function draw() {
+				clear();
+				circle(x,y);
+				x+=2*hor;
+				y+=4*ver;
+				if(x>900)
+				{hor=-1;}
+				if(x==0){hor=1;}
+				if(y>600)
+				{ver=-1;}
+				if(y==0){ver=1;}
+			}
+			 
+			init();
+		});
+
+		</script>
+	</head>
+	<body>
+	<canvas id="cancha" width="900" height="600"></canvas>
+
+	</body>
+</html>

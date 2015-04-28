@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>	
+		<script>
+			$(document).ready(function()
+			{
+    			// $("button").click(function()
+    			// {
+       //  			$(this).hide();
+    			// });
+				$("#usuario").focus(function()
+				{
+					$(this).css("background-color", "#cccccc");       				
+       				$("#mu").text("tamano mínimo de 6 caracteres");       				
+    			});
+    			$("#usuario").blur(function(){
+        			$(this).css("background-color", "#ffffff");
+        			if($("#usuario").val().length < 6)
+        			{
+        				$("#mu").text("tamano minimo de 6 caracteres");
+        				$(this).css("background-color", "#ff0000");
+        			}
+        			else
+        			{
+        				$("#mu").text("");
+        			}
+    			});
+    			$("#password").focus(function()
+				{
+					$(this).css("background-color", "#cccccc");       				
+       				$("#mp").text("tamano minimo de 8 caracteres y contener al menos un numero");       				
+    			});
+    			$("#password").blur(function(){
+    				var filter = /[0-9]/;    				
+        			$(this).css("background-color", "#ffffff");        			
+        			if(!filter.test($(this).val()) )
+        			{      				
+        				$("#mp").text("contener al menos un numero");
+        				$(this).css("background-color", "#ff0000");
+        			}
+        			//no me acuardo como hacer and 
+
+        			if($(this).val().length < 8)
+        			{
+        				$("#mp").text("contener al menos un 8 digitos");
+        				$(this).css("background-color", "#ff0000");        			
+        			}
+        			else
+        			{
+        				$("#mp").text("");
+        			}
+    			});
+    			$("#ciudad").click(function()
+				{   				
+       				$("#mc").text("elija una cuidad"); 
+        			if($(this).val().length < 1)
+        			{
+        				$("#mc").text("elija una cuidad");
+        			}
+        			else
+        			{
+        				$("#mc").text("");
+        			}
+    			});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Nuevo usuario</h1>
+		<form action="">
+			<table >
+			<tr>
+    			<td>Usuario: <input type="text" name="usuario" id="usuario">;</td>
+			    <td><spam id="mu"></spam></td>
+  			</tr>
+  			<tr>
+    			<td>Password: <input type="password" name="password" id="password"></td>
+    			<td><spam id="mp"></spam></td>
+  			</tr>
+  			<tr>
+    			<td>Ciudad: <select name="ciudad" id="ciudad">
+				<option value="">Elija</option>
+				<option value="Cochabamba">Cochabamba</option>
+				<option value="La Paz">La Paz</option>
+				<option value="Santa Cruz">Santa Cruz</option>
+				</select>
+				</td>
+    			<td><spam id="mc"></spam>;</td>
+  			</tr>
+			</table>
+			
+			 	
+			
+			
+		</form>
+	</body>
+</html>

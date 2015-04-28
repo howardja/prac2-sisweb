@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script>
+			function mostrar_bisiestos()
+			{
+				var start_year = document.getElementById('year1').value;
+				var end_year = document.getElementById('year2').value};
+				for (var i = start_year ; i<=end_year; i++) 
+				{
+					if(i%4==0)
+					{
+						document.getElementById("result").value = i + "<br>";
+					}
+				}
+			}						
+		</script>
+	</head>
+	<body>
+		Inicio: <input type="number" id="year1">
+		<br>
+		Fin:<input type="number" id="year2">
+		<br>
+		<textarea id="result" cols="30" rows="10"></textarea>
+		<br>
+		<button onclick="mostrar_bisiestos();">Calcular</button>
+	</body>
+</html>
