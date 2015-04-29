@@ -1,0 +1,17 @@
+<html>
+ <head>
+ 	<script>
+	
+	function operacion()
+	{		
+		 document.getElementById('salida').value = eval(document.getElementById('entrada').value.replace(/,/g, " + "));
+	}
+	</script>
+ </head>
+ <body>
+ Entrada: <input type="text" name="entrada" id="entrada">
+ <br>
+ Salida: <input type="text" name="salida" id="salida">
+ <input type="button" OnClick="operacion()" name="igual" value="=">
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+ <head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>	
+		<script>
+			$(document).ready(function()
+			{
+				var paises = [{id:1, name: "Bolivia"},{id:2, name: "Brasil"},{id:3, name: "USA"}]
+	var ciudades = [{id:1,country_id: 1, name: "Cochabamba"},{id:2,country_id: 1, name: "La Paz"},{id:3,country_id: 2, name: "Rio de Janeiro"}, {id:4,country_id: 2, name: "San Pablo"}, {id:5, country_id: 3, name: "Washington"}, {id:6,country_id: 3, name: "Nueva York"}]
+			$('#pais').empty();
+			for (var i = paises.length - 1; i >= 0; i--)
+			{
+				
+				$('#pais').append('<option value="'+paises[i].id+'">'+paises[i].name+'</option>');
+			}
+    			
+			});
+			$("#ciudad").click(function()
+				{   				
+       				for (var i = ciudades.length - 1; i >= 0; i--)
+			{
+				
+				$('#ciudad').append('<option value="'+paises[i].id+'">'+paises[i].name+'</option>');
+			}
+    			});
+		</script>
+
+ </head>
+ <body>
+ Pais: <select name="pais" id="pais">
+ <option value="">Selecciona un pais</option>
+ </select>
+ <br>
+ Ciudad: <select name="ciudad" id="ciudad"></select>
+ </body>
+</html>
